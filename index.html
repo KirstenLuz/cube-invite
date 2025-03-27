@@ -27,6 +27,19 @@
     });
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let videoEl = document.querySelector("#videoElement");
+      let userAgent = navigator.userAgent;
+
+      if (userAgent.includes("Samsung") || userAgent.includes("Motorola")) {
+        videoEl.setAttribute("scale", "1 1 1");
+      } else {
+        videoEl.setAttribute("scale", "0.8 0.8 0.8"); // Reduz em dispositivos problemáticos
+      }
+    });
+  </script>
+
   <body style="margin: 0px; overflow: hidden">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
       <a-assets>
@@ -46,10 +59,11 @@
         controlador
       >
         <a-video
-          width="1.2"
-          height="0.8"
+          id="videoElement"
+          width="1.5"
+          height="1"
           rotation="0 0 0"
-          position="0 1.2 -1"
+          position="0 0.75 0"
           src="#video"
           look-at="[camera]"
         ></a-video>
