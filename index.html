@@ -40,7 +40,7 @@
   </script>
   
   <body style="margin: 0px; overflow: hidden">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:720; debugUIEnabled: false;">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
       <a-assets>
         <video
           id="video"
@@ -67,7 +67,7 @@
         ></a-video>
       </a-marker>
 
-      <a-entity camera="fov: 70; position: 0 1.6 0;"></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
