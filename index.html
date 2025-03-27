@@ -6,35 +6,23 @@
   </head>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      let vid = document.querySelector("#video");
-
-      // Força autoplay para evitar bloqueio do navegador
-      vid.play().catch(() => {
-        console.warn("Autoplay bloqueado. Necessário interação do usuário.");
-      });
-
-      // Ajusta escala do vídeo dependendo do dispositivo
-      let userAgent = navigator.userAgent;
-      if (userAgent.includes("Samsung") || userAgent.includes("Motorola")) {
-        vid.setAttribute("scale", "1 1 1");
-      } else {
-        vid.setAttribute("scale", "0.8 0.8 0.8"); // Reduz zoom em dispositivos problemáticos
-      }
-    });
-
-    // Componente A-Frame para controlar a reprodução do vídeo
     AFRAME.registerComponent("controlador", {
+      // ..
       init: function () {
+        this.toggle = false;
         this.vid = document.querySelector("#video");
-        this.el.addEventListener("markerFound", () => {
-          console.log("Marcador encontrado! Reproduzindo vídeo...");
-          this.vid.play();
-        });
-        this.el.addEventListener("markerLost", () => {
-          console.log("Marcador perdido! Pausando vídeo...");
+        this.vid.pause();
+      },
+      tick: function () {
+        if (this.el.object3D.visible == true) {
+          if (!this.toggle) {
+            this.toggle = true;
+            this.vid.play();
+          }
+        } else {
+          this.toggle = false;
           this.vid.pause();
-        });
+        }
       },
     });
   </script>
