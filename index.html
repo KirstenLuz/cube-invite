@@ -6,14 +6,6 @@
   </head>
 
   <script>
-    AFRAME.registerComponent("camera-controls", {
-      init: function () {
-        this.el.setAttribute("position", "0 0 5");
-      },
-    });
-  </script>
-
-  <script>
     AFRAME.registerComponent("controlador", {
       init: function () {
         this.toggle = false;
@@ -59,7 +51,7 @@
         ></a-video>
       </a-marker>
 
-      <a-entity camera></a-entity>
+      <a-entity camera position></a-entity>
     </a-scene>
   </body>
 </html>
