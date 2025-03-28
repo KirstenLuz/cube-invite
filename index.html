@@ -6,6 +6,14 @@
   </head>
 
   <script>
+    AFRAME.registerComponent("camera-controls", {
+      init: function () {
+        this.el.setAttribute("position", "0 0 5");
+      },
+    });
+  </script>
+
+  <script>
     AFRAME.registerComponent("controlador", {
       init: function () {
         this.toggle = false;
@@ -27,11 +35,7 @@
   </script>
 
   <body style="margin: 0px; overflow: hidden">
-    <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-    >
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
       <a-assets>
         <video
           id="video"
@@ -55,7 +59,7 @@
         ></a-video>
       </a-marker>
 
-      <a-entity camera position="0 0 5" fov="80"></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
