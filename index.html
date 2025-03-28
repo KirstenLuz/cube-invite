@@ -29,11 +29,7 @@
 
   <body style="margin: 0px; overflow: hidden">
     <!-- <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;"> -->
-    <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="debugUIEnabled: false; trackingMethod: best; sourceType: webcam;"
-    >
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
       <a-assets>
         <video
           id="video"
@@ -57,8 +53,7 @@
         ></a-video>
       </a-marker>
 
-      <a-camera></a-camera>
-      <!-- <a-entity camera></a-entity> -->
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
