@@ -7,7 +7,6 @@
 
   <script>
     AFRAME.registerComponent("controlador", {
-      // ..
       init: function () {
         this.toggle = false;
         this.vid = document.querySelector("#video");
@@ -28,12 +27,11 @@
   </script>
 
   <body style="margin: 0px; overflow: hidden">
-    <!-- <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;"> -->
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
       <a-assets>
         <video
           id="video"
-          src="https://cdn.glitch.global/2b5e5737-9141-492d-a26b-7e70b7122300/V%C3%ADdeo%20NFT%20QRCODE.mp4?v=1743019498449 "
+          src="https://cdn.glitch.global/2b5e5737-9141-492d-a26b-7e70b7122300/V%C3%ADdeo%20NFT%20QRCODE.mp4?v=1743019498449"
           loop
         ></video>
       </a-assets>
