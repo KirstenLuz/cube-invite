@@ -28,7 +28,8 @@
   </script>
 
   <body style="margin: 0px; overflow: hidden">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
+    <!-- <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;"> -->
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
       <a-assets>
         <video
           id="video"
@@ -52,7 +53,8 @@
         ></a-video>
       </a-marker>
 
-      <a-entity camera position="0 0 5" fov="80"></a-entity>
+      <a-camera></a-camera>
+      <!-- <a-entity camera></a-entity> -->
     </a-scene>
   </body>
 </html>
