@@ -6,6 +6,7 @@
   </head>
 
   <script>
+    // Criando um componente personalizado do A-Frame chamado "controlador"
     AFRAME.registerComponent("controlador", {
       init: function () {
         this.toggle = false;
@@ -25,6 +26,8 @@
       },
     });
   </script>
+  <!-- Nesse script é verificado se o marcador está vísivel na câmera, se ele for detectado
+   o vídeo é reproduzido, e se desaparecer, o vídeo é pausado -->
 
   <body style="margin: 0px; overflow: hidden">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false;">
